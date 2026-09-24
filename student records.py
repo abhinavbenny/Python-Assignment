@@ -1,16 +1,6 @@
-# Student Record Management System
-# A console-based mini project demonstrating:
-# data types, conditionals, loops, functions, exception handling,
-# file I/O (JSON), and menu-driven program design.
-
 import json
 
 DATA_FILE = "students.json"
-
-
-# ---------------------------------------------------------
-# FILE I/O
-# ---------------------------------------------------------
 
 def load_records():
     """Load records from the JSON file. Return an empty list if the
@@ -42,22 +32,12 @@ def save_records(records):
     except OSError as e:
         print(f"Error: could not save records to file ({e}). Your changes may be lost on exit.")
 
-
-# ---------------------------------------------------------
-# HELPER
-# ---------------------------------------------------------
-
 def find_student_by_id(records, student_id):
     """Return the student dictionary with the matching ID, or None if not found."""
     for student in records:
         if student["id"] == student_id:
             return student
     return None
-
-
-# ---------------------------------------------------------
-# MENU
-# ---------------------------------------------------------
 
 def display_menu():
     print("\n===== Student Record Management System =====")
@@ -68,11 +48,6 @@ def display_menu():
     print("5. Delete Record")
     print("6. Exit")
     print("==============================================")
-
-
-# ---------------------------------------------------------
-# CORE FEATURES
-# ---------------------------------------------------------
 
 def add_record(records):
     print("\n--- Add New Student Record ---")
